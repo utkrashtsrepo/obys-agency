@@ -1,0 +1,115 @@
+
+@font-face {
+    font-family: 'PlainLight';
+    src: url('plain-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'silk serif';
+    src: url('silkserif-lightitalic-webfont_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'PlainLight', sans-serif;
+    color: white;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+/* #0B0B0B */
+
+#main{
+    position: relative;
+    background-color: #030303;
+}
+#loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: #030303;
+    padding: 25vh 10vw;
+}
+.line{
+   
+    height: fit-content;
+    margin-bottom: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+}
+.line h1{
+    font-size: 6vw;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.line #line1part1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+.line #line1part1 h5,.line #line1part1 h6{
+    font-size: 3vw;
+    font-family: "silk serif";
+    font-weight: 400;
+}
+.line #line1part1 h5{
+   
+    width: 5vw;
+    text-align: right;
+}
+
+@keyframes anime {
+    0%{
+        font-family: "PlainLight";
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+     35%{
+        font-family: "PlainLight";
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    68%{
+        font-family: "silk serif";
+         -webkit-text-stroke: 1px #fff;
+         color: transparent;
+         font-weight: 500;
+         opacity: 1;
+    }
+    100%{
+        font-family: "silk serif";
+         -webkit-text-stroke: 1px #fff;
+         color: transparent;
+         font-weight: 500;
+         opacity: 0;
+    }
+}
+
+.line h2{
+    font-size: 4.5vw;
+    text-transform: uppercase;
+    font-weight: 900;
+   opacity: 0;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+}
