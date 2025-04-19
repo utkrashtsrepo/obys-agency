@@ -30,13 +30,24 @@ html,body{
     position: relative;
     background-color: #030303;
 }
+#crsr{
+    height: 2.3vw;
+    width: 2.3vw;
+    border-radius: 50%;
+    border: 1px solid rgb(242, 242, 242);
+    /* background-color: #fff; */
+    position: fixed;
+    z-index: 999;
+    mix-blend-mode: difference;
+    transform: translate(-50%,-50%);
+}
 #loader{
     height: 100%;
     width: 100%;
     position: fixed;
     z-index: 999;
     background-color: #030303;
-    padding: 25vh 10vw;
+    padding: 15vh 10vw;
 }
 .line{
    
@@ -112,4 +123,60 @@ html,body{
     height: 100vh;
     width: 100%;
     background-color: #151515;
+}
+#page1 #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 5.5vw ;
+}
+#page1 #nav2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+
+#nav2 h4{
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.hero{
+   
+    width: 70%;
+    margin-left: 28%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+}
+
+
+
+.hero h1{
+    font-size: 7.3vw;
+    text-transform: uppercase;
+    line-height: 7vw;
+    font-stretch: 7.6vw;
+    
+}
+.hero:nth-child(2){
+    margin-top: 18.5vh;
+}
+
+.hero h2,.hero h3{
+    font-size: 7.3vw;
+    text-transform: uppercase;
+    line-height: 7vw;
+    font-stretch: 7.6vw;
+    
+}
+
+.hero h2:hover{
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-weight: 500;
 }

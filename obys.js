@@ -1,53 +1,80 @@
-var tl = gsap.timeline();
 
-// 🔒 This flag will make sure the counter runs only once
-let counterStarted = false;
+function loadinganimation() {
 
-tl.from(".line h1", {
-    y: 150,
-    stagger: 0.2,
-    duration: 0.6,
-    delay: 0.5
-});
+    var tl = gsap.timeline();
 
-tl.from("#line1part1, .line h2", {
-    opacity: 0,
-    onstart: function () {
-        // Prevent the counter from running multiple times
-        if (counterStarted) return;
-        counterStarted = true;
+    // 🔒 This flag will make sure the counter runs only once
+    let counterStarted = false;
 
-        var h5timer = document.querySelector("#line1part1 h5");
-        var grow = 0;
-        var interval = setInterval(function () {
-            if (grow <= 100) {
-                h5timer.innerHTML = grow++;
-            } else {
-                clearInterval(interval);
-            }
-        }, 35);
-    },
-});
+    tl.from(".line h1", {
+        y: 150,
+        stagger: 0.2,
+        duration: 0.6,
+        delay: 0.5
+    });
 
-tl.to(".line h2", {
-    animationName: "anime",
-    opacity:1
-})
+    tl.from("#line1part1, .line h2", {
+        opacity: 0,
+        onstart: function () {
+            // Prevent the counter from running multiple times
+            if (counterStarted) return;
+            counterStarted = true;
 
-tl.to("#loader", {
-    opacity: 0,
-    delay: 3.6,
-    duration: 0.3,
-});
+            var h5timer = document.querySelector("#line1part1 h5");
+            var grow = 0;
+            var interval = setInterval(function () {
+                if (grow <= 100) {
+                    h5timer.innerHTML = grow++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 35);
+        },
+    });
 
-tl.from("#page1", {
-    y: 1600,
-    opacity: 0,
-    duration:0.5,
-    ease:Power4
-})
+    tl.to(".line h2", {
+        animationName: "anime",
+        opacity: 1
+    })
 
-tl.to("#loader", {
-    display: "none",
+    tl.to("#loader", {
+        opacity: 0,
+        delay: 3.6,
+        duration: 0.3,
+    });
 
-})
+    tl.from("#page1", {
+        y: 1600,
+        opacity: 0,
+        duration: 0.5,
+        ease: Power4
+    })
+
+    tl.to("#loader", {
+        display: "none",
+
+    });
+    tl.from("#hero1 h1,#hero2 h1,#hero3 h2,#hero4 h1", {
+        y: 120,
+        stagger: 0.2,
+        opacity: 0
+    });
+
+    tl.from("#nav", {
+        opacity: 0
+    })
+
+}
+function cursoranime() {
+
+    document.addEventListener("mousemove", function (dets) {
+        gsap.to("#crsr", {
+            left: dets.x,
+            top: dets.y
+        })
+    });
+
+    Shery.makeMagnet("#nav2 h4");
+}
+loadinganimation();
+cursoranime();
